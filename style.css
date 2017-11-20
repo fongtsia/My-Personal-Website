@@ -1,0 +1,274 @@
+* {
+  box-sizing: border-box;
+}
+
+#nav {
+  background-color: #ff7744;
+  width:100%;
+  border: 1px solid red;
+  position: fixed; /* 以視窗的左上角為原點，將元素固定在視窗左上角 */
+  top:0px; /* 自原點往下移動 */
+  left: 0px; /* 自原點往右移動 */
+  z-index: 100;
+}
+
+#content {
+  border: 1px solid blue;
+  position: relative;
+  top: 83px;
+  padding: 15px;
+}
+
+.container {
+  border: 1px solid blue; /* 標示用,使用完畢後刪除 */
+  width: 800px;
+  margin: 0 auto;
+}
+
+#about, #my-work, #contact-mw{
+  border: 1px solid yellow;
+}
+
+.menu li{
+  width: 200px;
+  padding: 15px 0px;
+  font-size: 10px;
+  margin: 0px;
+
+  border: 1px solid #fff;
+  border-radius: 15px;
+
+  list-style-type: none;
+  text-align: center;
+  background-color: #FF7744;
+  color:#fff;
+
+  display: inline-block;
+}
+
+.menu {
+  float: right;
+}
+
+a{
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+li:hover {
+  border: 1px solid #ff7744;
+  background-color: #fff;
+}
+
+li:hover a{
+  color: #ff6600;
+  font-weight: 800;
+}
+
+/* about me */
+
+#my-avatar {
+  border: 1px solid red; /* 標適用，排版完記得拿掉 */
+  float: left;
+  margin-right: 15px;
+}
+
+#my-avatar img{
+  width: 270px;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+table {
+  font-size: 15px;
+}
+
+th,td{
+  vertical-align: top;
+}
+
+td {
+  color: #666;
+  padding-left: 10px;
+}
+
+hr {
+  border:0.5px solid #eee;
+}
+
+/* My work */
+.item {
+  position: relative;
+  max-width: 30%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.item-info {
+  background-color: rgba(255,255,255,.8); /* 背景半透明*/
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  
+  padding:25px 10px;
+  text-align: center;
+
+  opacity: 0;
+}
+
+.item-info:hover {
+  opacity: 1;
+}
+
+.item.img {
+  width: 100%;
+}
+
+/* contact-me */
+#contact-me {
+  border: 1px solid green; /* 標示用，用完記得刪除 */
+}
+
+form.contact-form {
+  border:1px solid red; /* 標示用，用完記得刪除 */
+  width: 50%;
+  margin: 0px auto;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+.form-row input, .form-row textarea {
+  border-radius: 3px;
+  width: 100%;
+  border:1px solid #D6D9DC;
+  padding: 7px;
+}
+
+.form-row textarea {
+  resize: none; /* 取消textarea預設使用者可以拖曳右下角來改變大小的功能 */
+  height: 4em; /* 將輸入框-textarea的高度設定為4行字 */
+}
+
+.form-row button{
+  border-right: none;
+  border-radius: 3px; /*修改border的弧度 */
+  padding: 10px 15px;
+  cursor: pointer; /* 改變滑鼠觸及到Button時游標的形狀 */
+}
+
+.form-row button[type="submit"]{
+  background-color: #5995DA;
+  color: #FFFFFF;
+}
+
+.form-row button:hover { /* hover是用來指游標經過 .form-row button的地方 */
+  background-color: #a5103f; /* 當游標經過button時，會使button改變顏色 */
+}
+
+.form-row button:active { /* active是當按下按鈕時，會觸發設定的事件 */
+  background-color: #DAA520;
+}
+
+#content >.container  > div {
+  padding: 75px 0;
+}
+
+/* 水平線的樣式 */
+ hr.bar {
+  border:2px solid #ff6600;
+  width:80px;
+ }
+
+ h1 {
+  text-align: center;
+ }
+
+#about h1 {
+  margin-bottom: 0; /* 看不出效果？ */
+  text-align:  left;
+}
+
+/* my-work-gallary圖片置中 */
+#my-work-gallary {
+  text-align: center;
+}
+
+/* 以下是手機版CSS code
+*/
+@media screen and (min-width: 1024px) {
+  .menu-button {
+    display: none;
+  }
+  .menu-button-checkbox {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .container {
+    width: auto;
+  }
+
+  .menu-button {
+  float: right;
+  font-size: 25px;
+  line-height: 40px;
+  color: white;
+  background:transparent;
+  padding: 0 15px;
+  border: 0;
+ }
+
+ .menu-button-checkbox {
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 55px;
+    height: 40px;
+    opacity: 0;
+  }
+
+  .menu-button-checkbox:checked ~ .menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    margin-top: 0;
+    padding-left: 0;
+    position: fixed;
+    right: 0;
+    top: 40px;
+    width: 150px;
+    height: 100%;
+    
+  }
+
+  .menu li{
+    border:0;
+    border-radius: 0;
+  }
+
+  #my-avatar {
+    width: 100%;
+  }
+
+  #my-avatar img {
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+ 
